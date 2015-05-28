@@ -137,10 +137,10 @@ function typeit2(){
   else window.onload = blink;
 
 </script>
-	<div id="leftbar"  ><br><br><br><blink>A Race Down</blink><br>session: <span id="session"></span><br>user id: <span id="userid"></span><br>duration: <span id='duration'></span><br>IP Address: <?echo $ip ?><br>Host Name: <? echo gethostbyaddr($ip)?><br><br><br>User Agent: <? echo $_SERVER['HTTP_USER_AGENT'];?><br><br><br><br><br>Server: <br>CPU Usage: <span id="cpuusage"></span>
+	<div id="leftbar"  ><br><br><br><blink>A Race Down</blink><br>session: <span id="session"></span><br>user id: <span id="userid"></span><br>duration: <span id='duration'></span><br>IP Address: <?php echo $ip ?><br>Host Name: <?php echo gethostbyaddr($ip)?><br><br><br>User Agent: <?php echo $_SERVER['HTTP_USER_AGENT'];?><br><br><br><br><br>Server: <br>CPU Usage: <span id="cpuusage"></span>
 
 
-    <br>Memory Usage: <span id="musage"></span><br>Server Addr: <?echo $_SERVER['SERVER_ADDR'] ?><br>Server Name: <?echo $_SERVER['SERVER_NAME']?><br></div>
+    <br>Memory Usage: <span id="musage"></span><br>Server Addr: <?php echo $_SERVER['SERVER_ADDR'] ?><br>Server Name: <?php echo $_SERVER['SERVER_NAME']?><br></div>
 	<div id="middle" >
 		<div id="info">
 			<div id="quest1" class="quest1">></div>
