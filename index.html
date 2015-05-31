@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>A Race Down</title>
+
+<style type="text/css">
+html,body {
+			margin:0;
+			height:50%;
+			background:black;
+		}
+		
+		.sky {
+			height:160px;
+			background:#000000;
+			position:relative;
+			overflow:hidden;
+			-webkit-animation:sky_background 50s ease-out infinite;
+			-moz-animation:sky_background 50s ease-out infinite;
+			-o-animation:sky_background 50s ease-out infinite;
+			-webkit-transform:translate3d(0,0,0);
+			-moz-transform:translate3d(0,0,0);
+			-o-transform:translate3d(0,0,0)
+		}
+		
+		
+		.moon {
+			background:url("moon_1.png");
+			position:absolute;
+			left:0;
+			height:100%;
+			width:300%;
+			-webkit-animation:moon 50s linear infinite;
+			-moz-animation:moon 50s linear infinite;
+			-o-animation:moon 50s linear infinite;
+			-webkit-transform:translate3d(0,0,0);
+			-moz-transform:translate3d(0,0,0);
+			-o-transform:translate3d(0,0,0)
+		}
+		
+		
+		.clouds_one {
+			background:url("http://montanaflynn.me/lab/css-clouds/images/cloud_one.png");
+			position:absolute;
+			left:0;
+			top:0;
+			height:100%;
+			width:300%;
+			-webkit-animation:cloud_one 50s linear infinite;
+			-moz-animation:cloud_one 50s linear infinite;
+			-o-animation:cloud_one 50s linear infinite;
+			-webkit-transform:translate3d(0,0,0);
+			-moz-transform:translate3d(0,0,0);
+			-o-transform:translate3d(0,0,0)
+		}
+		
+		.clouds_two {
+			background:url("cloud13.png");
+			position:absolute;
+			left:0;
+			top:0;
+			height:100%;
+			width:300%;
+			-webkit-animation:cloud_two 75s linear infinite;
+			-moz-animation:cloud_two 75s linear infinite;
+			-o-animation:cloud_two 75s linear infinite;
+			-webkit-transform:translate3d(0,0,0);
+			-moz-transform:translate3d(0,0,0);
+			-o-transform:translate3d(0,0,0)
+		}
+		
+		.clouds_three {
+			background:url("cloud13.png");
+			position:absolute;
+			left:0;
+			top:0;
+			height:100%;
+			width:300%;
+			-webkit-animation:cloud_three 100s linear infinite;
+			-moz-animation:cloud_three 100s linear infinite;
+			-o-animation:cloud_three 100s linear infinite;
+			-webkit-transform:translate3d(0,0,0);
+			-moz-transform:translate3d(0,0,0);
+			-o-transform:translate3d(0,0,0)
+		}
+		
+		@-webkit-keyframes sky_background {
+			0% {
+				background:#000000;
+				color:#000000
+			}
+			
+			50% {
+				background:#000000;
+				color:#000000
+			}
+			
+			100% {
+				background:#000000;
+				color:#000000
+			}
+		}
+		
+		@-webkit-keyframes moon {
+			0% {
+				opacity: 0;
+				left:-200%
+				-moz-transform: scale(0.5);
+  				-webkit-transform: scale(0.5);
+			}
+			
+			50% {
+				opacity: 1;
+				-moz-transform: scale(1);
+				left:0%
+				bottom:250px;
+  				-webkit-transform: scale(1);
+			}
+		
+			100% {
+				opacity: 0;
+				bottom:500px;
+				-moz-transform: scale(0.5);
+  				-webkit-transform: scale(0.5);
+			}
+		}
+		
+		@-webkit-keyframes cloud_one {
+			0% {
+				left:0
+			}
+		
+			100% {
+				left:-200%
+			}
+		}
+		
+		@-webkit-keyframes cloud_two {
+			0% {
+				left:0
+			}
+		
+			100% {
+				left:-200%
+			}
+		}
+		
+		@-webkit-keyframes cloud_three {
+			0% {
+				left:0
+			}
+		
+			100% {
+				left:-200%
+			}
+		}
+		
+		@-moz-keyframes sky_background {
+			0% {
+				background:#000000;
+				color:#000000
+			}
+			
+			50% {
+				background:#000;
+				color:#000000
+			}
+			
+			100% {
+				background:#000000;
+				color:#000000
+			}
+		}
+		
+		@-moz-keyframes moon {
+			0% {
+				opacity: 0;
+				left:-200%
+				-moz-transform: scale(0.5);
+  				-webkit-transform: scale(0.5);
+			}
+			
+			50% {
+				opacity: 1;
+				-moz-transform: scale(1);
+				left:0%
+				bottom:250px;
+  				-webkit-transform: scale(1);
+			}
+		
+			100% {
+				opacity: 0;
+				bottom:500px;
+				-moz-transform: scale(0.5);
+  				-webkit-transform: scale(0.5);
+			}
+		}
+		
+		@-moz-keyframes cloud_one {
+			0% {
+				left:0
+			}
+		
+			100% {
+				left:-200%
+			}
+		}
+		
+		@-moz-keyframes cloud_two {
+			0% {
+				left:0
+			}
+		
+			100% {
+				left:-200%
+			}
+		}
+		
+		@-moz-keyframes cloud_three {
+			0% {
+				left:0
+			}
+		
+			100% {
+				left:-200%
+			}
+		}
+</style>
+</head>
+
+<body>
+	<img id="scream" width="220" height="277" src="umb3.png" alt="The Scream" style="display:none">
+    <div class="sky">
+    	
+    	<div class="moon" style="display:none"></div>
+    
+        <div class="clouds_one"></div>
+
+        <div class="clouds_two"></div>
+
+        <div class="clouds_three"></div>
+    </div>
+    <div class="canvas">
+    		<canvas id="c"></canvas>
+    		<script>
+var c = document.getElementById("c");
+var ctx = c.getContext("2d");
+
+//var cc = document.getElementById("cc");
+//var cctx = cc.getContext("2d");
+var img = document.getElementById("scream");
+    
+//making the canvas full screen
+c.height = window.innerHeight-165;
+c.width = window.innerWidth;
+
+
+/*
+
+cctx.beginPath();
+      cctx.moveTo(170, 80);
+      cctx.bezierCurveTo(130, 100, 130, 150, 230, 150);
+      cctx.bezierCurveTo(250, 180, 320, 180, 340, 150);
+      cctx.bezierCurveTo(420, 150, 420, 120, 390, 100);
+      cctx.bezierCurveTo(430, 40, 370, 30, 340, 50);
+      cctx.bezierCurveTo(320, 5, 250, 20, 250, 50);
+      cctx.bezierCurveTo(200, 5, 150, 20, 170, 80);
+      cctx.closePath();
+      cctx.lineWidth = 5;
+      cctx.fillStyle = '#e6e6e6';
+      cctx.fill();
+      cctx.strokeStyle = '#000000';
+      cctx.stroke();
+
+      // save canvas image as data url (png format by default)
+
+*/
+//chinese characters - taken from the unicode charset
+var chinese = "0 1 0 1 0 1 0 1 0 1 0 1 1";
+//converting the string into an array of single characters
+chinese = chinese.split("");
+
+var font_size = 15;
+var columns = c.width/font_size; //number of columns for the rain
+//an array of drops - one per column
+var drops = [];
+//x below is the x coordinate
+//1 = y co-ordinate of the drop(same for every drop initially)
+for(var x = 0; x < columns; x++)
+	drops[x] = 0; 
+
+c.addEventListener("click", onCanvasClick, false);
+  
+  function onCanvasClick(c) {
+  	var a =getCursorPosition(c);
+  	if(a[0] >=600 && a[0]<=725 && a[1]>=325)
+  	{
+  		window.location="http://www.dracowane.me/main.php";
+  	}
+  }
+  
+  function getCursorPosition(e) {
+  	var x;
+    var y;
+    if (e.pageX != undefined && e.pageY != undefined) {
+	x = e.pageX;
+	y = e.pageY;
+    }
+    else {
+	x = e.clientX + document.body.scrollLeft +
+            document.documentElement.scrollLeft;
+	y = e.clientY + document.body.scrollTop +
+            document.documentElement.scrollTop;
+    }
+    x -= c.offsetLeft;
+    y -= c.offsetTop;
+    
+    return [x,y];
+  }
+
+//drawing the characters
+function draw()
+{
+	//Black BG for the canvas
+	//translucent BG to show trail
+	ctx.drawImage(img, 600, 330);
+	ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
+	ctx.fillRect(0, 0, c.width, c.height);
+	
+	ctx.fillStyle = "#E6E6E6"; //white text
+	ctx.font = font_size + "px arial";
+	//looping over drops
+	for(var i = 0; i < drops.length; i++)
+	{
+		//a random chinese character to print
+		var text = chinese[Math.floor(Math.random()*chinese.length)];
+		//x = i*font_size, y = value of drops[i]*font_size
+		if(i*font_size >= 600 && i*font_size <= 750 && drops[i]*font_size >330)
+		{
+
+		}
+		else
+		ctx.fillText(text, i*font_size, drops[i]*font_size);
+		
+		//sending the drop back to the top randomly after it has crossed the screen
+		//adding a randomness to the reset to make the drops scattered on the Y axis
+		if(drops[i]*font_size > c.height && Math.random() > 0.975)
+			drops[i] = 0;
+		
+		//incrementing Y coordinate
+		drops[i]++;
+	}
+}
+
+setInterval(draw, 100);
+</script>
+    </div>
+</body>
+</html>
