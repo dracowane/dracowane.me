@@ -236,7 +236,7 @@ function typeit55(){
 
 </script>
 	<div id="ddata">
-     <div id="leftbar"  ><br><h4><blink>A Race Down</blink></h4><br>session: <span id="session"></span><br>user id: <span id="userid"></span><br>duration: <span id='duration'></span><br>IP Address: <?php echo $ip ?><br>Host Name: <?php echo gethostbyaddr($ip)?><br>User Agent: <?php echo $_SERVER['HTTP_USER_AGENT'];?><br><br><br><br><br><br><br>Server: <br>OS: Ubuntu 14.04 x64<br>RAM: 512MB Ram<br>Disk: 20GB SSD Disk<br>CPU Usage: <span id="cpuusage"></span>
+     <div id="leftbar"  ><br><h4><blink>War-an-Code</blink></h4><br>session: <span id="session"></span><br>user id: <span id="userid"></span><br>duration: <span id='duration'></span><br>IP Address: <?php echo $ip ?><br>Host Name: <?php echo gethostbyaddr($ip)?><br>User Agent: <?php echo $_SERVER['HTTP_USER_AGENT'];?><br><br><br><br><br><br><br>Server: <br>OS: Ubuntu 14.04 x64<br>RAM: 512MB Ram<br>Disk: 20GB SSD Disk<br>CPU Usage: <span id="cpuusage"></span>
 
 
                 <br>Memory Usage: <span id="musage"></span><br>Server Addr: <?php echo $_SERVER['SERVER_ADDR'] ?><br>Server Name: <?php echo $_SERVER['SERVER_NAME']?><br>
