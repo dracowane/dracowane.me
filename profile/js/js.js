@@ -61,7 +61,7 @@ jQuery(document).ready(function ($) {
             $('.navigation li[data-slide="3"]').removeClass('active');
             $('.navigation li[data-slide="4"]').addClass('active');
              htmlbody.animate({
-            scrollTop: 1702
+            scrollTop: 1566
         }, 2000, 'easeInOutQuint');
         }
         
@@ -85,7 +85,7 @@ jQuery(document).ready(function ($) {
     if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
     window.onmousewheel = document.onmousewheel = wheel;
     var time = 1500;
-    var distance = 100;
+    var distance = 50;
     function wheel(event) {
         if (event.wheelDelta) delta = event.wheelDelta / 50;
         else if (event.detail) delta = -event.detail / 1;
@@ -99,7 +99,8 @@ jQuery(document).ready(function ($) {
             scrollTop: $(window).scrollTop() - (distance * delta)
         }, time);
     }
-    var flag = 0;
+
+    //alert($(window).height());
 	//keyboard  scroll easing
     $(document).keydown(function (e) {
        // e.preventDefault();
@@ -108,14 +109,14 @@ jQuery(document).ready(function ($) {
         case 38:
             if(flag == 0){
             $('html, body').stop().animate({
-                scrollTop: $(window).scrollTop() - 100
+                scrollTop: $(window).scrollTop() - 50
             }, 1000,'easeOutQuart');
             flag = 1;
             }
             else{
 
                  $('html, body').stop().animate({
-                scrollTop: $(window).scrollTop() - 50
+                scrollTop: $(window).scrollTop() - 25
             }, 100);
             }
 
@@ -158,14 +159,14 @@ jQuery(document).ready(function ($) {
         case 40:
             if(flag == 0){
             $('html, body').stop().animate({
-                scrollTop: Math.min($(window).scrollTop() + 100,1656)
+                scrollTop: $(window).scrollTop() + 50
             }, 1000,'easeOutQuart');
             flag = 1;
             }
             else{
 
                  $('html, body').stop().animate({
-                scrollTop: Math.min($(window).scrollTop() + 50,1656)
+                scrollTop: $(window).scrollTop() + 25
             }, 100);
             }
 
@@ -252,9 +253,10 @@ jQuery(document).ready(function ($) {
             break;
             //down
         case 40:
-           
+           if($(window).scrollTop() >= 1500)
+                break;
             $('html, body').stop().animate({
-                scrollTop: Math.min( $(window).scrollTop() + distance,1656)
+                scrollTop: $(window).scrollTop() + distance
             }, time,'easeOutQuart');
             flag = 0;
             if($(window).scrollTop() >=0 && $(window).scrollTop() <= 350)
