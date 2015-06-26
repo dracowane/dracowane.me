@@ -3,7 +3,7 @@ $ip=$_SERVER['REMOTE_ADDR'];
 ?>
 <html>
 <head>
-<title>A Race Down</title>
+<title>War-an-Code</title>
 <style type="text/css">
 #ddata{
 color:E6E6E6;
@@ -204,6 +204,7 @@ function typeit5(){
         typeSpeed: 0
       });
   });
+  window.setTimeout(redirectt,11000);
 }
 
 function typeit55(){
@@ -213,6 +214,7 @@ function typeit55(){
         typeSpeed: 0
       });
   });
+  window.setTimeout(redirectt,11000);
 }
 
 </script>
@@ -353,7 +355,7 @@ function coderno1()
         $("#quest6").css("display","block");
         document.getElementById("quest7").value="";
   document.getElementById("quest7").style.visibility='visible';
-window.setTimeout(redirectt,11000);
+
 }
 function redirectt()
 {
@@ -366,7 +368,6 @@ function coderyes1()
  $( "#info span:nth-child(10)" ).css( "display", "none" );
         $("#quest6").css("display","block");
   document.getElementById("quest7").style.visibility='visible';
-window.setTimeout(redirectt,11000);
 }
 
 $("#inname").bind("keypress", {}, keypressInBoxx);
