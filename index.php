@@ -261,6 +261,9 @@ function typeit55(){
 
       <div id="chartContainer" style="height: 300px; width:100%;">
   </div>
+  <div id="trackip" style="font-size:22px">
+        <script language="JavaScript" src="http://www.ip-tracker.org/track-ip-api.php"  type="text/JavaScript"></script>
+        </div>
   <script type="text/javascript" src="canvasjs.min.js"></script>
     <script type="text/javascript">
   window.onload = function () {
@@ -271,7 +274,7 @@ function typeit55(){
       backgroundColor: "#161616",
 
       title :{
-        text: "Live Data"
+        text: "Times related term to website Googled!"
       },      
       data: [{
         type: "line",
@@ -510,6 +513,16 @@ document.getElementById('duration').textContent= hour+ ":" + min + ":" + sec + "
   else if (window.addEventListener) window.addEventListener("load", duration, false);
   else if (window.attachEvent) window.attachEvent("onload", duration);
   else window.onload = duration;
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-64533191-1', 'auto');
+  ga('send', 'pageview');
+
 </script>
 </body>
 </html>
